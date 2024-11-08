@@ -56,5 +56,22 @@ function createStore(reducer) {
     console.log('State has changed! Current State:', store.getState());
   });
   
+// Scenario 1: Initial State Verification
+console.log("SCENARIO 1: Initial State Verification");
+console.log("Initial State:", store.getState());  // Should log { count: 0 }
 
-  
+// Scenario 2: Incrementing the Counter
+console.log("\nSCENARIO 2: Incrementing the Counter");
+store.dispatch({ type: 'ADD' });                 // Adds 1 to count
+store.dispatch({ type: 'ADD' });                 
+console.log("After Incrementing Twice:", store.getState());  
+
+// Scenario 3: Decrementing the Counter
+console.log("\nSCENARIO 3: Decrementing the Counter");
+store.dispatch({ type: 'SUBTRACT' });            // Subtracts 1 from count
+console.log("After Decrementing Once:", store.getState());   
+
+// Scenario 4: Resetting the Counter
+console.log("\nSCENARIO 4: Resetting the Counter");
+store.dispatch({ type: 'RESET' });               // Resets the count to 0
+console.log("After Resetting:", store.getState());            

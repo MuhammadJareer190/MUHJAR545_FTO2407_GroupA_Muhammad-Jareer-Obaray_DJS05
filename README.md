@@ -67,3 +67,29 @@ Ensure your code is well-commented and adheres to best practices for readability
 - **Documentation**: Clarity of your approach and reflections in the README.md.
 
 This challenge is an excellent opportunity to demonstrate your understanding of state management concepts and functional programming principles. Good luck!
+
+
+Functional Code Overview:
+
+Functional code is designed around pure functions, meaning functions that don’t modify external state and always produce the same output given the same inputs. It emphasizes immutability (not changing data directly) and side-effect-free operations, making code predictable and easier to test.
+
+Explanation of Each Part of the Codebase:
+
+1. createStore(reducer):
+
+This function sets up a store for managing state.
+getState: Returns the current state.
+dispatch: Accepts an action to modify state via the 
+reducer and notifies all subscribers of the change.
+subscribe: Adds a listener that triggers on each 
+state change, with an option to unsubscribe.
+
+2. tallyReducer(state, action):
+
+This is a pure function that takes the current state and an action to produce a new state.
+Handles specific action types (ADD, SUBTRACT, RESET) to update the count appropriately.
+
+3. store and store.subscribe:
+
+store is created with tallyReducer, managing the tally’s state.
+store.subscribe attaches a listener that logs state changes, letting us see updates in the console.
